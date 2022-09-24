@@ -1,24 +1,18 @@
-from turtle import *
+import turtle
+import colorsys
 
-speed(0)
-bgcolor('black')
-color('red')
-hideturtle()
+t = turtle.Turtle()
+s = turtle.Screen()
+s.bgcolor("black")
+t.speed(0)
+n=36
+h=0
 
-n = 1
-p = True
-
-while True:
-    circle(n)
-    if p:
-        n = n - 1
-    else:
-        n = n + 1
-
-    if n == 0 or n == 60:
-        p = not p
-
-    left(1)
-    forward(3)
-
-done()
+for i in range(460):
+ c=colorsys.hsv_to_rgb(h,1,0.9)
+ h+=1/n
+ t.color(c)
+ t.left(145)
+ for j in range(5):
+  t.forward(300)
+  t.left(150)
